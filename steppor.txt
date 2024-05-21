@@ -1,0 +1,44 @@
+#include<reg52.h>
+
+
+#define phase_a 0x0a
+#define phase_b 0x06
+#define phase_c 0x05
+#define phase_d 0x09
+
+//sbit EN=p1^0;
+
+void delay(int cnt);
+void delay(int cnt)
+{
+	int i,j;
+	for(i=0;i<cnt;i++)
+	{
+		for(j=0;j<100;j++)
+		{
+		}
+	}
+}
+void clockwise(void);
+void clockwise(void)
+{
+	P2=phase_a;
+	delay(200);
+	P2=phase_b;
+	delay(200);
+	P2=phase_c;
+	delay(200);
+	P2=phase_d;
+	delay(200);
+}
+void main(void)
+{
+	while(1)
+	{
+		clockwise();
+	}
+}
+	
+	
+	
+
